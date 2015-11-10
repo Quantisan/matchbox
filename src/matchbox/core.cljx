@@ -532,7 +532,7 @@
   (let [type (utils/kebab->underscore type)]
     (let [listener (comp cb render-fn)]
       ;; subscribe
-      (.on ref type listener)
+      (.on ref type listener listener)
       ;; build unsubsubscribe fn
       (fn [] (.off ref type listener)))))
 
